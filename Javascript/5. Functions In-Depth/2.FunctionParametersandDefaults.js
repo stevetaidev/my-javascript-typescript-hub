@@ -7,4 +7,3 @@ function greet(name, age = 30) {
   // Gọi hàm greet với giá trị cho name và age
   greet("Alice", 45); // Xin chào, Alice! Bạn 25 tuổi.
   greet("Bob"); // Xin chào, Bob! Bạn 30 tuổi, vì age được đặt mặc định là 30
-  
