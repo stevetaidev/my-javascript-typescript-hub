@@ -34,14 +34,20 @@ const greet1 = function(name1) {
   
 // Hoặc bạn có thể tạo hàm vô danh bằng Function Expression và truyền nó trực tiếp vào một hàm khác hoặc biểu thức khác:
 
-const calculate = function(a, b, operation) {
+// Định nghĩa một hàm calculate nhận 3 tham số: a, b và operation
+function calculate(a, b, operation) {
+    // Gọi hàm operation với a và b, sau đó trả về kết quả
     return operation(a, b);
-  };
+  }
   
-  const add = function(x, y) {
+  // Định nghĩa một hàm add nhận 2 tham số: x và y, và thực hiện phép cộng
+  function add(x, y) {
     return x + y;
-  };
+  }
   
-  const result = calculate(5, 3, add); // Gọi hàm calculate với hàm add làm tham số
-  console.log(result); 
+  // Gọi hàm calculate với tham số 5, 3 và hàm add
+  const result = calculate(5, 3, add);
+  
+  // In ra kết quả
+  console.log(result); // Kết quả là 8
   
