@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <h1>Đăng ký tài khoản</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Tên người dùng:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="confirmPassword">Xác nhận mật khẩu:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+
+        <input type="submit" value="Đăng ký">
+    </form>
+
+    <p id="errorMessages"></p>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var errorMessage = "";
+
+            // Kiểm tra xem tên người dùng có được nhập hay không
+            if (username === "") {
+                errorMessage += "Vui lòng nhập tên người dùng.<br>";
+            }
+
+            // Kiểm tra độ dài mật khẩu ít nhất là 6 ký tự
+            if (password.length < 6) {
+                errorMessage += "Mật khẩu phải có ít nhất 6 ký tự.<br>";
+            }
+
+            // Kiểm tra mật khẩu và xác nhận mật khẩu phải trùng khớp
+            if (password !== confirmPassword) {
+                errorMessage += "Mật khẩu và xác nhận mật khẩu không khớp.<br>";
+            }
+
+            var errorMessages = document.getElementById("errorMessages");
+            errorMessages.innerHTML = errorMessage;
+
+            // Nếu có lỗi, ngăn chặn biểu mẫu được gửi đi
+            if (errorMessage !== "") {
+                return false;
+            }
+
+            return true; // Cho phép biểu mẫu được gửi đi nếu không có lỗi
+        }
+    </script>
+</body>
+</html>

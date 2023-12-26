@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ví dụ Elements DOM</title>
+</head>
+<body>
+    <h1 id="myHeading">Xin chào, DOM Elements!</h1>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <input type="text" id="myInput" value="Nhập dữ liệu">
+    <button id="myButton">Thay đổi tiêu đề</button>
+
+    <script>
+        // Lấy tham chiếu đến các phần tử HTML bằng ID
+        var heading = document.getElementById("myHeading");
+        var list = document.getElementById("myList");
+        var input = document.getElementById("myInput");
+        var button = document.getElementById("myButton");
+
+        // Thao tác với các phần tử DOM HTML
+        heading.innerHTML = "Xin chào, DOM Elements đã thay đổi tiêu đề!";
+
+        // Thêm một mục mới vào danh sách
+        var newItem = document.createElement("li");
+        newItem.textContent = "Item 4";
+        list.appendChild(newItem);
+
+        // Đọc giá trị từ trường nhập liệu
+        var inputValue = input.value;
+        console.log("Giá trị trong trường nhập liệu là: " + inputValue);
+
+        // Gán sự kiện click cho nút button
+        button.addEventListener("click", function() {
+            // Thay đổi tiêu đề bằng nội dung nhập liệu
+            var newTitle = input.value;
+            heading.innerHTML = newTitle;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ví dụ DOM</title>
+</head>
+<body>
+    <h1 id="myHeading">Xin chào, DOM!</h1>
+    <button id="myButton">Thay đổi nội dung</button>
+
+    <script>
+        // Lấy tham chiếu đến phần tử có id là "myHeading" và "myButton"
+        var heading = document.getElementById("myHeading");
+        var button = document.getElementById("myButton");
+
+        // Gán sự kiện click cho nút button
+        button.onclick = function() {
+            // Thay đổi nội dung của tiêu đề
+            heading.innerHTML = "Xin chào, DOM đã thay đổi nội dung!";
+        };
+    </script>
+</body>
+</html>
