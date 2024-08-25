@@ -49,5 +49,5 @@ function calculate(a, b, operation) {
   const result = calculate(5, 3, add);
   
   // In ra kết quả
-  console.log(result); // Kết quả là 8
+  console.log(result); // Kết quả là 8 nhờ phép cộng 5 + 3
   
